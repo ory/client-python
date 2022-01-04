@@ -13,11 +13,11 @@ import sys
 import unittest
 
 import ory_client
-from ory_client.model.project_host import ProjectHost
+from ory_client.model.null_plan import NullPlan
 
 
-class TestProjectHost(unittest.TestCase):
-    """ProjectHost unit test stubs"""
+class TestNullPlan(unittest.TestCase):
+    """NullPlan unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestProjectHost(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testProjectHost(self):
-        """Test ProjectHost"""
+    def testNullPlan(self):
+        """Test NullPlan"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = ProjectHost()  # noqa: E501
+        # model = NullPlan()  # noqa: E501
         pass
 
 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** | Last Time Project&#39;s Revision was Updated | [readonly] 
 **error_ui_url** | **str** | Self-Service Error UI URL  Sets the UI URL for the error UI. If left empty, this will use Ory&#39;s hosted pages. | [optional] 
 **kratos_config_version** | **str** | The Project&#39;s Kratos Config Version | [optional] [readonly] 
-**kratos_custom_schema_id** | [**NullUUID**](NullUUID.md) |  | [optional] 
+**kratos_custom_schema_id** | **str** |  | [optional] 
 **login_ui_url** | **str** | Self-Service Login UI URL  Sets the UI URL for the login UI. If left empty, this will use Ory&#39;s hosted pages. | [optional] 
 **lookup_secret** | [**ProjectLookupSecretConfig**](ProjectLookupSecretConfig.md) |  | [optional] 
 **oidc_providers** | [**ProjectOidcConfigs**](ProjectOidcConfigs.md) |  | [optional] 

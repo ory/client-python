@@ -50,7 +50,7 @@ This endpoint creates an identity. It is NOT possible to set an identity's crede
 
 ### Example
 
-* Api Key Authentication (oryAccessToken):
+* Bearer Authentication (oryAccessToken):
 ```python
 import time
 import ory_client
@@ -70,11 +70,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryAccessToken
-configuration.api_key['oryAccessToken'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryAccessToken'] = 'Bearer'
+# Configure Bearer authorization: oryAccessToken
+configuration = ory_client.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -136,7 +135,7 @@ This endpoint creates a recovery link which should be given to the user in order
 
 ### Example
 
-* Api Key Authentication (oryAccessToken):
+* Bearer Authentication (oryAccessToken):
 ```python
 import time
 import ory_client
@@ -156,11 +155,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryAccessToken
-configuration.api_key['oryAccessToken'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryAccessToken'] = 'Bearer'
+# Configure Bearer authorization: oryAccessToken
+configuration = ory_client.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -221,7 +219,7 @@ Calling this endpoint irrecoverably and permanently deletes the identity given i
 
 ### Example
 
-* Api Key Authentication (oryAccessToken):
+* Bearer Authentication (oryAccessToken):
 ```python
 import time
 import ory_client
@@ -239,11 +237,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryAccessToken
-configuration.api_key['oryAccessToken'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryAccessToken'] = 'Bearer'
+# Configure Bearer authorization: oryAccessToken
+configuration = ory_client.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -298,7 +295,7 @@ This endpoint is useful for:  To forcefully logout Identity from all devices and
 
 ### Example
 
-* Api Key Authentication (oryAccessToken):
+* Bearer Authentication (oryAccessToken):
 ```python
 import time
 import ory_client
@@ -316,11 +313,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryAccessToken
-configuration.api_key['oryAccessToken'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryAccessToken'] = 'Bearer'
+# Configure Bearer authorization: oryAccessToken
+configuration = ory_client.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -377,7 +373,7 @@ Learn how identities work in [Ory Kratos' User And Identity Model Documentation]
 
 ### Example
 
-* Api Key Authentication (oryAccessToken):
+* Bearer Authentication (oryAccessToken):
 ```python
 import time
 import ory_client
@@ -396,11 +392,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryAccessToken
-configuration.api_key['oryAccessToken'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryAccessToken'] = 'Bearer'
+# Configure Bearer authorization: oryAccessToken
+configuration = ory_client.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -469,7 +464,7 @@ Lists all identities. Does not support search at the moment.  Learn how identiti
 
 ### Example
 
-* Api Key Authentication (oryAccessToken):
+* Bearer Authentication (oryAccessToken):
 ```python
 import time
 import ory_client
@@ -488,11 +483,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryAccessToken
-configuration.api_key['oryAccessToken'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryAccessToken'] = 'Bearer'
+# Configure Bearer authorization: oryAccessToken
+configuration = ory_client.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -550,7 +544,7 @@ This endpoint updates an identity. It is NOT possible to set an identity's crede
 
 ### Example
 
-* Api Key Authentication (oryAccessToken):
+* Bearer Authentication (oryAccessToken):
 ```python
 import time
 import ory_client
@@ -570,11 +564,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryAccessToken
-configuration.api_key['oryAccessToken'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryAccessToken'] = 'Bearer'
+# Configure Bearer authorization: oryAccessToken
+configuration = ory_client.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:

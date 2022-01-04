@@ -19,7 +19,7 @@ Creates a new project.
 
 ### Example
 
-* Api Key Authentication (oryAccessToken):
+* Bearer Authentication (oryAccessToken):
 ```python
 import time
 import ory_client
@@ -39,11 +39,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryAccessToken
-configuration.api_key['oryAccessToken'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryAccessToken'] = 'Bearer'
+# Configure Bearer authorization: oryAccessToken
+configuration = ory_client.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -173,7 +172,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | project |  -  |
+**201** | project |  -  |
 **401** | genericError |  -  |
 **403** | genericError |  -  |
 **404** | genericError |  -  |
@@ -190,7 +189,7 @@ Get a projects you have access to by its ID.
 
 ### Example
 
-* Api Key Authentication (oryAccessToken):
+* Bearer Authentication (oryAccessToken):
 ```python
 import time
 import ory_client
@@ -209,11 +208,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryAccessToken
-configuration.api_key['oryAccessToken'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryAccessToken'] = 'Bearer'
+# Configure Bearer authorization: oryAccessToken
+configuration = ory_client.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -271,7 +269,7 @@ Lists all projects you have access to.
 
 ### Example
 
-* Api Key Authentication (oryAccessToken):
+* Bearer Authentication (oryAccessToken):
 ```python
 import time
 import ory_client
@@ -290,11 +288,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryAccessToken
-configuration.api_key['oryAccessToken'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryAccessToken'] = 'Bearer'
+# Configure Bearer authorization: oryAccessToken
+configuration = ory_client.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -348,7 +345,7 @@ Creates a new configuration revision for a project.
 
 ### Example
 
-* Api Key Authentication (oryAccessToken):
+* Bearer Authentication (oryAccessToken):
 ```python
 import time
 import ory_client
@@ -368,11 +365,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryAccessToken
-configuration.api_key['oryAccessToken'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryAccessToken'] = 'Bearer'
+# Configure Bearer authorization: oryAccessToken
+configuration = ory_client.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
