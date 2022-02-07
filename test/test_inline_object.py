@@ -13,11 +13,11 @@ import sys
 import unittest
 
 import ory_client
-from ory_client.model.submit_self_service_settings_flow_with_password_method_body import SubmitSelfServiceSettingsFlowWithPasswordMethodBody
+from ory_client.model.inline_object import InlineObject
 
 
-class TestSubmitSelfServiceSettingsFlowWithPasswordMethodBody(unittest.TestCase):
-    """SubmitSelfServiceSettingsFlowWithPasswordMethodBody unit test stubs"""
+class TestInlineObject(unittest.TestCase):
+    """InlineObject unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestSubmitSelfServiceSettingsFlowWithPasswordMethodBody(unittest.TestCase)
     def tearDown(self):
         pass
 
-    def testSubmitSelfServiceSettingsFlowWithPasswordMethodBody(self):
-        """Test SubmitSelfServiceSettingsFlowWithPasswordMethodBody"""
+    def testInlineObject(self):
+        """Test InlineObject"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = SubmitSelfServiceSettingsFlowWithPasswordMethodBody()  # noqa: E501
+        # model = InlineObject()  # noqa: E501
         pass
 
 
