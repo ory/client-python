@@ -13,15 +13,11 @@ import sys
 import unittest
 
 import ory_client
-from ory_client.model.project import Project
-from ory_client.model.warning import Warning
-globals()['Project'] = Project
-globals()['Warning'] = Warning
-from ory_client.model.successful_project_config_update import SuccessfulProjectConfigUpdate
+from ory_client.model.sql_null_string import SQLNullString
 
 
-class TestSuccessfulProjectConfigUpdate(unittest.TestCase):
-    """SuccessfulProjectConfigUpdate unit test stubs"""
+class TestSQLNullString(unittest.TestCase):
+    """SQLNullString unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +25,10 @@ class TestSuccessfulProjectConfigUpdate(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testSuccessfulProjectConfigUpdate(self):
-        """Test SuccessfulProjectConfigUpdate"""
+    def testSQLNullString(self):
+        """Test SQLNullString"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = SuccessfulProjectConfigUpdate()  # noqa: E501
+        # model = SQLNullString()  # noqa: E501
         pass
 
 
