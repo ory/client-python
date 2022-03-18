@@ -13,11 +13,11 @@ import sys
 import unittest
 
 import ory_client
-from ory_client.model.stripe_customer_response import StripeCustomerResponse
+from ory_client.model.provision_mock_subscription_payload import ProvisionMockSubscriptionPayload
 
 
-class TestStripeCustomerResponse(unittest.TestCase):
-    """StripeCustomerResponse unit test stubs"""
+class TestProvisionMockSubscriptionPayload(unittest.TestCase):
+    """ProvisionMockSubscriptionPayload unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestStripeCustomerResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testStripeCustomerResponse(self):
-        """Test StripeCustomerResponse"""
+    def testProvisionMockSubscriptionPayload(self):
+        """Test ProvisionMockSubscriptionPayload"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = StripeCustomerResponse()  # noqa: E501
+        # model = ProvisionMockSubscriptionPayload()  # noqa: E501
         pass
 
 
