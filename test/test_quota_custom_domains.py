@@ -13,11 +13,11 @@ import sys
 import unittest
 
 import ory_client
-from ory_client.model.submit_self_service_login_flow_with_totp_method_body import SubmitSelfServiceLoginFlowWithTotpMethodBody
+from ory_client.model.quota_custom_domains import QuotaCustomDomains
 
 
-class TestSubmitSelfServiceLoginFlowWithTotpMethodBody(unittest.TestCase):
-    """SubmitSelfServiceLoginFlowWithTotpMethodBody unit test stubs"""
+class TestQuotaCustomDomains(unittest.TestCase):
+    """QuotaCustomDomains unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestSubmitSelfServiceLoginFlowWithTotpMethodBody(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testSubmitSelfServiceLoginFlowWithTotpMethodBody(self):
-        """Test SubmitSelfServiceLoginFlowWithTotpMethodBody"""
+    def testQuotaCustomDomains(self):
+        """Test QuotaCustomDomains"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = SubmitSelfServiceLoginFlowWithTotpMethodBody()  # noqa: E501
+        # model = QuotaCustomDomains()  # noqa: E501
         pass
 
 
