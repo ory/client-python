@@ -1,11 +1,11 @@
-# InlineResponse2001
+# JsonPatchDocument
 
+A JSONPatchDocument request
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**version** | **str** | The version of Ory Kratos. | 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**value** | [**[JsonPatch]**](JsonPatch.md) | A JSONPatchDocument request | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
