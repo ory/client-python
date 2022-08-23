@@ -94,6 +94,7 @@ from ory_client.model.o_auth2_client import OAuth2Client
 from ory_client.model.o_auth2_consent_request import OAuth2ConsentRequest
 from ory_client.model.o_auth2_consent_request_open_id_connect_context import OAuth2ConsentRequestOpenIDConnectContext
 from ory_client.model.o_auth2_consent_session import OAuth2ConsentSession
+from ory_client.model.o_auth2_consent_session_expires_at import OAuth2ConsentSessionExpiresAt
 from ory_client.model.o_auth2_login_request import OAuth2LoginRequest
 from ory_client.model.o_auth2_logout_request import OAuth2LogoutRequest
 from ory_client.model.o_auth2_token_response import OAuth2TokenResponse

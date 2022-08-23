@@ -90,6 +90,7 @@ docs/OAuth2Client.md
 docs/OAuth2ConsentRequest.md
 docs/OAuth2ConsentRequestOpenIDConnectContext.md
 docs/OAuth2ConsentSession.md
+docs/OAuth2ConsentSessionExpiresAt.md
 docs/OAuth2LoginRequest.md
 docs/OAuth2LogoutRequest.md
 docs/OAuth2TokenResponse.md
@@ -302,6 +303,7 @@ ory_client/model/o_auth2_client.py
 ory_client/model/o_auth2_consent_request.py
 ory_client/model/o_auth2_consent_request_open_id_connect_context.py
 ory_client/model/o_auth2_consent_session.py
+ory_client/model/o_auth2_consent_session_expires_at.py
 ory_client/model/o_auth2_login_request.py
 ory_client/model/o_auth2_logout_request.py
 ory_client/model/o_auth2_token_response.py
@@ -508,6 +510,7 @@ test/test_o_auth2_client.py
 test/test_o_auth2_consent_request.py
 test/test_o_auth2_consent_request_open_id_connect_context.py
 test/test_o_auth2_consent_session.py
+test/test_o_auth2_consent_session_expires_at.py
 test/test_o_auth2_login_request.py
 test/test_o_auth2_logout_request.py
 test/test_o_auth2_token_response.py
