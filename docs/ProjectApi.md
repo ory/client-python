@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 
 # **create_organization**
-> Organization create_organization(project_id)
+> Organization create_organization(project_id, organization_body=organization_body)
 
 
 
@@ -37,13 +37,12 @@ Create a B2B SSO Organization
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.organization_body import OrganizationBody
-from ory_client.model.error_generic import ErrorGeneric
-from ory_client.model.organization import Organization
+from ory_client.models.organization import Organization
+from ory_client.models.organization_body import OrganizationBody
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -57,44 +56,33 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project_id = "project_id_example" # str | Project ID  The project's ID.
-    organization_body = OrganizationBody(
-        domains=[
-            "domains_example",
-        ],
-        label="label_example",
-    ) # OrganizationBody |  (optional)
+    api_instance = ory_client.ProjectApi(api_client)
+    project_id = 'project_id_example' # str | Project ID  The project's ID.
+    organization_body = ory_client.OrganizationBody() # OrganizationBody |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.create_organization(project_id)
-        pprint(api_response)
-    except ory_client.ApiException as e:
-        print("Exception when calling ProjectApi->create_organization: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         api_response = api_instance.create_organization(project_id, organization_body=organization_body)
+        print("The response of ProjectApi->create_organization:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->create_organization: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**| Project ID  The project&#39;s ID. |
- **organization_body** | [**OrganizationBody**](OrganizationBody.md)|  | [optional]
+ **project_id** | **str**| Project ID  The project&#39;s ID. | 
+ **organization_body** | [**OrganizationBody**](OrganizationBody.md)|  | [optional] 
 
 ### Return type
 
@@ -109,7 +97,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -123,7 +110,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_project**
-> Project create_project()
+> Project create_project(create_project_body=create_project_body)
 
 Create a Project
 
@@ -134,13 +121,12 @@ Creates a new project.
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.create_project_body import CreateProjectBody
-from ory_client.model.error_generic import ErrorGeneric
-from ory_client.model.project import Project
+from ory_client.models.create_project_body import CreateProjectBody
+from ory_client.models.project import Project
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -154,35 +140,32 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    create_project_body = CreateProjectBody(
-        environment="prod",
-        name="name_example",
-        workspace_id="workspace_id_example",
-    ) # CreateProjectBody |  (optional)
+    api_instance = ory_client.ProjectApi(api_client)
+    create_project_body = ory_client.CreateProjectBody() # CreateProjectBody |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Create a Project
         api_response = api_instance.create_project(create_project_body=create_project_body)
+        print("The response of ProjectApi->create_project:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->create_project: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_project_body** | [**CreateProjectBody**](CreateProjectBody.md)|  | [optional]
+ **create_project_body** | [**CreateProjectBody**](CreateProjectBody.md)|  | [optional] 
 
 ### Return type
 
@@ -197,7 +180,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -211,7 +193,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_project_api_key**
-> ProjectApiKey create_project_api_key(project)
+> ProjectApiKey create_project_api_key(project, create_project_api_key_request=create_project_api_key_request)
 
 Create project API token
 
@@ -222,13 +204,12 @@ Create an API token for a project.
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.create_project_api_key_request import CreateProjectApiKeyRequest
-from ory_client.model.project_api_key import ProjectApiKey
-from ory_client.model.error_generic import ErrorGeneric
+from ory_client.models.create_project_api_key_request import CreateProjectApiKeyRequest
+from ory_client.models.project_api_key import ProjectApiKey
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -242,43 +223,34 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project = "project_example" # str | The Project ID or Project slug
-    create_project_api_key_request = CreateProjectApiKeyRequest(
-        name="name_example",
-    ) # CreateProjectApiKeyRequest |  (optional)
+    api_instance = ory_client.ProjectApi(api_client)
+    project = 'project_example' # str | The Project ID or Project slug
+    create_project_api_key_request = ory_client.CreateProjectApiKeyRequest() # CreateProjectApiKeyRequest |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Create project API token
-        api_response = api_instance.create_project_api_key(project)
-        pprint(api_response)
-    except ory_client.ApiException as e:
-        print("Exception when calling ProjectApi->create_project_api_key: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Create project API token
         api_response = api_instance.create_project_api_key(project, create_project_api_key_request=create_project_api_key_request)
+        print("The response of ProjectApi->create_project_api_key:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->create_project_api_key: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project** | **str**| The Project ID or Project slug |
- **create_project_api_key_request** | [**CreateProjectApiKeyRequest**](CreateProjectApiKeyRequest.md)|  | [optional]
+ **project** | **str**| The Project ID or Project slug | 
+ **create_project_api_key_request** | [**CreateProjectApiKeyRequest**](CreateProjectApiKeyRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -292,7 +264,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -313,11 +284,10 @@ Delete a B2B SSO Organization for a project.
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.error_generic import ErrorGeneric
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -331,31 +301,32 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project_id = "project_id_example" # str | Project ID  The project's ID.
-    organization_id = "organization_id_example" # str | Organization ID  The Organization's ID.
+    api_instance = ory_client.ProjectApi(api_client)
+    project_id = 'project_id_example' # str | Project ID  The project's ID.
+    organization_id = 'organization_id_example' # str | Organization ID  The Organization's ID.
 
-    # example passing only required values which don't have defaults set
     try:
         # Delete a B2B SSO Organization for a project.
         api_instance.delete_organization(project_id, organization_id)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->delete_organization: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**| Project ID  The project&#39;s ID. |
- **organization_id** | **str**| Organization ID  The Organization&#39;s ID. |
+ **project_id** | **str**| Project ID  The project&#39;s ID. | 
+ **organization_id** | **str**| Organization ID  The Organization&#39;s ID. | 
 
 ### Return type
 
@@ -369,7 +340,6 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -396,11 +366,10 @@ Deletes an API token and immediately removes it.
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.error_generic import ErrorGeneric
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -414,31 +383,32 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project = "project_example" # str | The Project ID or Project slug
-    token_id = "token_id_example" # str | The Token ID
+    api_instance = ory_client.ProjectApi(api_client)
+    project = 'project_example' # str | The Project ID or Project slug
+    token_id = 'token_id_example' # str | The Token ID
 
-    # example passing only required values which don't have defaults set
     try:
         # Delete project API token
         api_instance.delete_project_api_key(project, token_id)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->delete_project_api_key: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project** | **str**| The Project ID or Project slug |
- **token_id** | **str**| The Token ID |
+ **project** | **str**| The Project ID or Project slug | 
+ **token_id** | **str**| The Token ID | 
 
 ### Return type
 
@@ -452,7 +422,6 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -475,12 +444,11 @@ Use this API to get your active project in the Ory Network Console UI.
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.active_project_in_console import ActiveProjectInConsole
-from ory_client.model.generic_error import GenericError
+from ory_client.models.active_project_in_console import ActiveProjectInConsole
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -494,25 +462,27 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
+    api_instance = ory_client.ProjectApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Returns the Ory Network Project selected in the Ory Network Console
         api_response = api_instance.get_active_project_in_console()
+        print("The response of ProjectApi->get_active_project_in_console:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->get_active_project_in_console: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -527,7 +497,6 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -549,12 +518,11 @@ Returns a B2B SSO Organization for a project by it's ID.
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.get_organization_response import GetOrganizationResponse
-from ory_client.model.error_generic import ErrorGeneric
+from ory_client.models.get_organization_response import GetOrganizationResponse
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -568,32 +536,34 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project_id = "project_id_example" # str | Project ID  The project's ID.
-    organization_id = "organization_id_example" # str | Organization ID  The Organization's ID.
+    api_instance = ory_client.ProjectApi(api_client)
+    project_id = 'project_id_example' # str | Project ID  The project's ID.
+    organization_id = 'organization_id_example' # str | Organization ID  The Organization's ID.
 
-    # example passing only required values which don't have defaults set
     try:
         # Returns a B2B SSO Organization for a project by it's ID.
         api_response = api_instance.get_organization(project_id, organization_id)
+        print("The response of ProjectApi->get_organization:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->get_organization: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**| Project ID  The project&#39;s ID. |
- **organization_id** | **str**| Organization ID  The Organization&#39;s ID. |
+ **project_id** | **str**| Project ID  The project&#39;s ID. | 
+ **organization_id** | **str**| Organization ID  The Organization&#39;s ID. | 
 
 ### Return type
 
@@ -607,7 +577,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -632,12 +601,11 @@ Get a projects you have access to by its ID.
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.error_generic import ErrorGeneric
-from ory_client.model.project import Project
+from ory_client.models.project import Project
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -651,30 +619,32 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project_id = "project_id_example" # str | Project ID  The project's ID.
+    api_instance = ory_client.ProjectApi(api_client)
+    project_id = 'project_id_example' # str | Project ID  The project's ID.
 
-    # example passing only required values which don't have defaults set
     try:
         # Get a Project
         api_response = api_instance.get_project(project_id)
+        print("The response of ProjectApi->get_project:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->get_project: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**| Project ID  The project&#39;s ID. |
+ **project_id** | **str**| Project ID  The project&#39;s ID. | 
 
 ### Return type
 
@@ -689,7 +659,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -703,7 +672,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_project_members**
-> ProjectMembers get_project_members(project)
+> List[ProjectMember] get_project_members(project)
 
 Get all members associated with this project
 
@@ -714,12 +683,11 @@ This endpoint requires the user to be a member of the project with the role `OWN
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.project_members import ProjectMembers
-from ory_client.model.generic_error import GenericError
+from ory_client.models.project_member import ProjectMember
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -733,34 +701,36 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project = "project_example" # str | 
+    api_instance = ory_client.ProjectApi(api_client)
+    project = 'project_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Get all members associated with this project
         api_response = api_instance.get_project_members(project)
+        print("The response of ProjectApi->get_project_members:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->get_project_members: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project** | **str**|  |
+ **project** | **str**|  | 
 
 ### Return type
 
-[**ProjectMembers**](ProjectMembers.md)
+[**List[ProjectMember]**](ProjectMember.md)
 
 ### Authorization
 
@@ -770,7 +740,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -784,7 +753,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_project_metrics**
-> GetProjectMetricsResponse get_project_metrics(project_id, event_type, resolution, _from, to)
+> GetProjectMetricsResponse get_project_metrics(project_id, event_type, resolution, var_from, to)
 
 
 
@@ -795,12 +764,11 @@ Retrieves project metrics for the specified event type and time range
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.get_project_metrics_response import GetProjectMetricsResponse
-from ory_client.model.generic_error import GenericError
+from ory_client.models.get_project_metrics_response import GetProjectMetricsResponse
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -814,37 +782,39 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project_id = "project_id_example" # str | Project ID
-    event_type = "event_type_example" # str | The event type to query for
-    resolution = "4M" # str | The resolution of the buckets  The minimum resolution is 1 minute.
-    _from = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | The start RFC3339 date of the time window
-    to = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | The end RFC3339 date of the time window
+    api_instance = ory_client.ProjectApi(api_client)
+    project_id = 'project_id_example' # str | Project ID
+    event_type = 'event_type_example' # str | The event type to query for
+    resolution = 'resolution_example' # str | The resolution of the buckets  The minimum resolution is 1 minute.
+    var_from = '2013-10-20T19:20:30+01:00' # datetime | The start RFC3339 date of the time window
+    to = '2013-10-20T19:20:30+01:00' # datetime | The end RFC3339 date of the time window
 
-    # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_project_metrics(project_id, event_type, resolution, _from, to)
+        api_response = api_instance.get_project_metrics(project_id, event_type, resolution, var_from, to)
+        print("The response of ProjectApi->get_project_metrics:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->get_project_metrics: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**| Project ID |
- **event_type** | **str**| The event type to query for |
- **resolution** | **str**| The resolution of the buckets  The minimum resolution is 1 minute. |
- **_from** | **datetime**| The start RFC3339 date of the time window |
- **to** | **datetime**| The end RFC3339 date of the time window |
+ **project_id** | **str**| Project ID | 
+ **event_type** | **str**| The event type to query for | 
+ **resolution** | **str**| The resolution of the buckets  The minimum resolution is 1 minute. | 
+ **var_from** | **datetime**| The start RFC3339 date of the time window | 
+ **to** | **datetime**| The end RFC3339 date of the time window | 
 
 ### Return type
 
@@ -858,7 +828,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -881,12 +850,11 @@ Name | Type | Description  | Notes
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.error_generic import ErrorGeneric
-from ory_client.model.list_organizations_response import ListOrganizationsResponse
+from ory_client.models.list_organizations_response import ListOrganizationsResponse
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -900,29 +868,31 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project_id = "project_id_example" # str | Project ID  The project's ID.
+    api_instance = ory_client.ProjectApi(api_client)
+    project_id = 'project_id_example' # str | Project ID  The project's ID.
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.list_organizations(project_id)
+        print("The response of ProjectApi->list_organizations:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->list_organizations: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**| Project ID  The project&#39;s ID. |
+ **project_id** | **str**| Project ID  The project&#39;s ID. | 
 
 ### Return type
 
@@ -937,7 +907,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -950,7 +919,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_project_api_keys**
-> ProjectApiKeys list_project_api_keys(project)
+> List[ProjectApiKey] list_project_api_keys(project)
 
 List a project's API Tokens
 
@@ -961,12 +930,11 @@ A list of all the project's API tokens.
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.error_generic import ErrorGeneric
-from ory_client.model.project_api_keys import ProjectApiKeys
+from ory_client.models.project_api_key import ProjectApiKey
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -980,34 +948,36 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project = "project_example" # str | The Project ID or Project slug
+    api_instance = ory_client.ProjectApi(api_client)
+    project = 'project_example' # str | The Project ID or Project slug
 
-    # example passing only required values which don't have defaults set
     try:
         # List a project's API Tokens
         api_response = api_instance.list_project_api_keys(project)
+        print("The response of ProjectApi->list_project_api_keys:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->list_project_api_keys: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project** | **str**| The Project ID or Project slug |
+ **project** | **str**| The Project ID or Project slug | 
 
 ### Return type
 
-[**ProjectApiKeys**](ProjectApiKeys.md)
+[**List[ProjectApiKey]**](ProjectApiKey.md)
 
 ### Authorization
 
@@ -1017,7 +987,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1029,7 +998,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_projects**
-> ProjectMetadataList list_projects()
+> List[ProjectMetadata] list_projects()
 
 List All Projects
 
@@ -1040,12 +1009,11 @@ Lists all projects you have access to.
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.project_metadata_list import ProjectMetadataList
-from ory_client.model.error_generic import ErrorGeneric
+from ory_client.models.project_metadata import ProjectMetadata
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -1059,30 +1027,32 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
+    api_instance = ory_client.ProjectApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # List All Projects
         api_response = api_instance.list_projects()
+        print("The response of ProjectApi->list_projects:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->list_projects: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**ProjectMetadataList**](ProjectMetadataList.md)
+[**List[ProjectMetadata]**](ProjectMetadata.md)
 
 ### Authorization
 
@@ -1092,7 +1062,6 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1107,7 +1076,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_project**
-> SuccessfulProjectUpdate patch_project(project_id)
+> SuccessfulProjectUpdate patch_project(project_id, json_patch=json_patch)
 
 Patch an Ory Network Project Configuration
 
@@ -1118,13 +1087,12 @@ Deprecated: Use the `patchProjectWithRevision` endpoint instead to specify the e
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.json_patch import JsonPatch
-from ory_client.model.error_generic import ErrorGeneric
-from ory_client.model.successful_project_update import SuccessfulProjectUpdate
+from ory_client.models.json_patch import JsonPatch
+from ory_client.models.successful_project_update import SuccessfulProjectUpdate
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -1138,48 +1106,34 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project_id = "project_id_example" # str | Project ID  The project's ID.
-    json_patch = [
-        JsonPatch(
-            _from="/name",
-            op="replace",
-            path="/name",
-            value=None,
-        ),
-    ] # [JsonPatch] |  (optional)
+    api_instance = ory_client.ProjectApi(api_client)
+    project_id = 'project_id_example' # str | Project ID  The project's ID.
+    json_patch = [ory_client.JsonPatch()] # List[JsonPatch] |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Patch an Ory Network Project Configuration
-        api_response = api_instance.patch_project(project_id)
-        pprint(api_response)
-    except ory_client.ApiException as e:
-        print("Exception when calling ProjectApi->patch_project: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Patch an Ory Network Project Configuration
         api_response = api_instance.patch_project(project_id, json_patch=json_patch)
+        print("The response of ProjectApi->patch_project:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->patch_project: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**| Project ID  The project&#39;s ID. |
- **json_patch** | [**[JsonPatch]**](JsonPatch.md)|  | [optional]
+ **project_id** | **str**| Project ID  The project&#39;s ID. | 
+ **json_patch** | [**List[JsonPatch]**](JsonPatch.md)|  | [optional] 
 
 ### Return type
 
@@ -1193,7 +1147,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1220,11 +1173,10 @@ Irrecoverably purge a project
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.generic_error import GenericError
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -1238,29 +1190,30 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project_id = "project_id_example" # str | Project ID  The project's ID.
+    api_instance = ory_client.ProjectApi(api_client)
+    project_id = 'project_id_example' # str | Project ID  The project's ID.
 
-    # example passing only required values which don't have defaults set
     try:
         # Irrecoverably purge a project
         api_instance.purge_project(project_id)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->purge_project: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**| Project ID  The project&#39;s ID. |
+ **project_id** | **str**| Project ID  The project&#39;s ID. | 
 
 ### Return type
 
@@ -1274,7 +1227,6 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1300,11 +1252,10 @@ This also sets their invite status to `REMOVED`. This endpoint requires the user
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.generic_error import GenericError
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -1318,31 +1269,32 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project = "project_example" # str | 
-    member = "member_example" # str | 
+    api_instance = ory_client.ProjectApi(api_client)
+    project = 'project_example' # str | 
+    member = 'member_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Remove a member associated with this project
         api_instance.remove_project_member(project, member)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->remove_project_member: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project** | **str**|  |
- **member** | **str**|  |
+ **project** | **str**|  | 
+ **member** | **str**|  | 
 
 ### Return type
 
@@ -1357,7 +1309,6 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -1370,7 +1321,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_active_project_in_console**
-> set_active_project_in_console()
+> set_active_project_in_console(set_active_project_in_console_body=set_active_project_in_console_body)
 
 Sets the Ory Network Project active in the Ory Network Console
 
@@ -1381,12 +1332,11 @@ Use this API to set your active project in the Ory Network Console UI.
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.generic_error import GenericError
-from ory_client.model.set_active_project_in_console_body import SetActiveProjectInConsoleBody
+from ory_client.models.set_active_project_in_console_body import SetActiveProjectInConsoleBody
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -1400,32 +1350,30 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    set_active_project_in_console_body = SetActiveProjectInConsoleBody(
-        project_id="project_id_example",
-    ) # SetActiveProjectInConsoleBody |  (optional)
+    api_instance = ory_client.ProjectApi(api_client)
+    set_active_project_in_console_body = ory_client.SetActiveProjectInConsoleBody() # SetActiveProjectInConsoleBody |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Sets the Ory Network Project active in the Ory Network Console
         api_instance.set_active_project_in_console(set_active_project_in_console_body=set_active_project_in_console_body)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->set_active_project_in_console: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **set_active_project_in_console_body** | [**SetActiveProjectInConsoleBody**](SetActiveProjectInConsoleBody.md)|  | [optional]
+ **set_active_project_in_console_body** | [**SetActiveProjectInConsoleBody**](SetActiveProjectInConsoleBody.md)|  | [optional] 
 
 ### Return type
 
@@ -1440,7 +1388,6 @@ void (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -1452,7 +1399,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_project**
-> SuccessfulProjectUpdate set_project(project_id)
+> SuccessfulProjectUpdate set_project(project_id, set_project=set_project)
 
 Update an Ory Network Project Configuration
 
@@ -1463,13 +1410,12 @@ This endpoints allows you to update the Ory Network project configuration for in
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.set_project import SetProject
-from ory_client.model.error_generic import ErrorGeneric
-from ory_client.model.successful_project_update import SuccessfulProjectUpdate
+from ory_client.models.set_project import SetProject
+from ory_client.models.successful_project_update import SuccessfulProjectUpdate
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -1483,66 +1429,34 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project_id = "project_id_example" # str | Project ID  The project's ID.
-    set_project = SetProject(
-        cors_admin=ProjectCors(
-            enabled=True,
-            origins=[
-                "origins_example",
-            ],
-        ),
-        cors_public=ProjectCors(
-            enabled=True,
-            origins=[
-                "origins_example",
-            ],
-        ),
-        name="name_example",
-        services=ProjectServices(
-            identity=ProjectServiceIdentity(
-                config={},
-            ),
-            oauth2=ProjectServiceOAuth2(
-                config={},
-            ),
-            permission=ProjectServicePermission(
-                config={},
-            ),
-        ),
-    ) # SetProject |  (optional)
+    api_instance = ory_client.ProjectApi(api_client)
+    project_id = 'project_id_example' # str | Project ID  The project's ID.
+    set_project = ory_client.SetProject() # SetProject |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Update an Ory Network Project Configuration
-        api_response = api_instance.set_project(project_id)
-        pprint(api_response)
-    except ory_client.ApiException as e:
-        print("Exception when calling ProjectApi->set_project: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Update an Ory Network Project Configuration
         api_response = api_instance.set_project(project_id, set_project=set_project)
+        print("The response of ProjectApi->set_project:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->set_project: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**| Project ID  The project&#39;s ID. |
- **set_project** | [**SetProject**](SetProject.md)|  | [optional]
+ **project_id** | **str**| Project ID  The project&#39;s ID. | 
+ **set_project** | [**SetProject**](SetProject.md)|  | [optional] 
 
 ### Return type
 
@@ -1556,7 +1470,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1572,7 +1485,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_organization**
-> Organization update_organization(project_id, organization_id)
+> Organization update_organization(project_id, organization_id, organization_body=organization_body)
 
 Update a B2B SSO Organization for a project.
 
@@ -1581,13 +1494,12 @@ Update a B2B SSO Organization for a project.
 * Bearer Authentication (oryAccessToken):
 
 ```python
-import time
 import ory_client
-from ory_client.api import project_api
-from ory_client.model.organization_body import OrganizationBody
-from ory_client.model.error_generic import ErrorGeneric
-from ory_client.model.organization import Organization
+from ory_client.models.organization import Organization
+from ory_client.models.organization_body import OrganizationBody
+from ory_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://playground.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
@@ -1601,48 +1513,36 @@ configuration = ory_client.Configuration(
 
 # Configure Bearer authorization: oryAccessToken
 configuration = ory_client.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = project_api.ProjectApi(api_client)
-    project_id = "project_id_example" # str | Project ID  The project's ID.
-    organization_id = "organization_id_example" # str | Organization ID  The Organization's ID.
-    organization_body = OrganizationBody(
-        domains=[
-            "domains_example",
-        ],
-        label="label_example",
-    ) # OrganizationBody |  (optional)
+    api_instance = ory_client.ProjectApi(api_client)
+    project_id = 'project_id_example' # str | Project ID  The project's ID.
+    organization_id = 'organization_id_example' # str | Organization ID  The Organization's ID.
+    organization_body = ory_client.OrganizationBody() # OrganizationBody |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Update a B2B SSO Organization for a project.
-        api_response = api_instance.update_organization(project_id, organization_id)
-        pprint(api_response)
-    except ory_client.ApiException as e:
-        print("Exception when calling ProjectApi->update_organization: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Update a B2B SSO Organization for a project.
         api_response = api_instance.update_organization(project_id, organization_id, organization_body=organization_body)
+        print("The response of ProjectApi->update_organization:\n")
         pprint(api_response)
-    except ory_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectApi->update_organization: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**| Project ID  The project&#39;s ID. |
- **organization_id** | **str**| Organization ID  The Organization&#39;s ID. |
- **organization_body** | [**OrganizationBody**](OrganizationBody.md)|  | [optional]
+ **project_id** | **str**| Project ID  The project&#39;s ID. | 
+ **organization_id** | **str**| Organization ID  The Organization&#39;s ID. | 
+ **organization_body** | [**OrganizationBody**](OrganizationBody.md)|  | [optional] 
 
 ### Return type
 
@@ -1656,7 +1556,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
