@@ -1,6 +1,6 @@
 # ory_client.EventsApi
 
-All URIs are relative to *https://playground.projects.oryapis.com*
+All URIs are relative to *https://.projects.oryapis.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,7 +17,7 @@ Create an event stream for your project.
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -26,10 +26,10 @@ from ory_client.models.event_stream import EventStream
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -37,10 +37,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -74,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -102,17 +103,17 @@ Remove an event stream from a project.
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -120,10 +121,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -155,7 +157,7 @@ void (empty response body)
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -181,7 +183,7 @@ List all event streams for the project. This endpoint is not paginated.
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -189,10 +191,10 @@ from ory_client.models.list_event_streams import ListEventStreams
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -200,10 +202,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -235,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -260,7 +263,7 @@ Update an event stream for a project.
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -269,10 +272,10 @@ from ory_client.models.set_event_stream_body import SetEventStreamBody
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -280,10 +283,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -319,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 

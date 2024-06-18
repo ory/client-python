@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **name** | **str** |  | 
 **subscription_id** | **str** |  | [optional] 
+**subscription_plan** | **str** |  | [optional] 
 **updated_at** | **datetime** |  | 
 
 ## Example

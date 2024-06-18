@@ -1,28 +1,25 @@
 # ory_client.ProjectApi
 
-All URIs are relative to *https://playground.projects.oryapis.com*
+All URIs are relative to *https://.projects.oryapis.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_organization**](ProjectApi.md#create_organization) | **POST** /projects/{project_id}/organizations | 
 [**create_project**](ProjectApi.md#create_project) | **POST** /projects | Create a Project
 [**create_project_api_key**](ProjectApi.md#create_project_api_key) | **POST** /projects/{project}/tokens | Create project API token
-[**delete_organization**](ProjectApi.md#delete_organization) | **DELETE** /projects/{project_id}/organizations/{organization_id} | Delete a B2B SSO Organization for a project.
+[**delete_organization**](ProjectApi.md#delete_organization) | **DELETE** /projects/{project_id}/organizations/{organization_id} | 
 [**delete_project_api_key**](ProjectApi.md#delete_project_api_key) | **DELETE** /projects/{project}/tokens/{token_id} | Delete project API token
-[**get_active_project_in_console**](ProjectApi.md#get_active_project_in_console) | **GET** /console/active/project | Returns the Ory Network Project selected in the Ory Network Console
-[**get_organization**](ProjectApi.md#get_organization) | **GET** /projects/{project_id}/organizations/{organization_id} | Returns a B2B SSO Organization for a project by it&#39;s ID.
+[**get_organization**](ProjectApi.md#get_organization) | **GET** /projects/{project_id}/organizations/{organization_id} | Returns a B2B SSO Organization for a project by its ID
 [**get_project**](ProjectApi.md#get_project) | **GET** /projects/{project_id} | Get a Project
 [**get_project_members**](ProjectApi.md#get_project_members) | **GET** /projects/{project}/members | Get all members associated with this project
-[**get_project_metrics**](ProjectApi.md#get_project_metrics) | **GET** /projects/{project_id}/metrics | 
 [**list_organizations**](ProjectApi.md#list_organizations) | **GET** /projects/{project_id}/organizations | 
 [**list_project_api_keys**](ProjectApi.md#list_project_api_keys) | **GET** /projects/{project}/tokens | List a project&#39;s API Tokens
 [**list_projects**](ProjectApi.md#list_projects) | **GET** /projects | List All Projects
 [**patch_project**](ProjectApi.md#patch_project) | **PATCH** /projects/{project_id} | Patch an Ory Network Project Configuration
 [**purge_project**](ProjectApi.md#purge_project) | **DELETE** /projects/{project_id} | Irrecoverably purge a project
 [**remove_project_member**](ProjectApi.md#remove_project_member) | **DELETE** /projects/{project}/members/{member} | Remove a member associated with this project
-[**set_active_project_in_console**](ProjectApi.md#set_active_project_in_console) | **PUT** /console/active/project | Sets the Ory Network Project active in the Ory Network Console
 [**set_project**](ProjectApi.md#set_project) | **PUT** /projects/{project_id} | Update an Ory Network Project Configuration
-[**update_organization**](ProjectApi.md#update_organization) | **PUT** /projects/{project_id}/organizations/{organization_id} | Update a B2B SSO Organization for a project.
+[**update_organization**](ProjectApi.md#update_organization) | **PUT** /projects/{project_id}/organizations/{organization_id} | 
 
 
 # **create_organization**
@@ -34,7 +31,7 @@ Create a B2B SSO Organization
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -43,10 +40,10 @@ from ory_client.models.organization_body import OrganizationBody
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -54,10 +51,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -90,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -118,7 +116,7 @@ Creates a new project.
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -127,10 +125,10 @@ from ory_client.models.project import Project
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -138,10 +136,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -173,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -201,7 +200,7 @@ Create an API token for a project.
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -210,10 +209,10 @@ from ory_client.models.project_api_key import ProjectApiKey
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -221,10 +220,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -277,21 +277,23 @@ Name | Type | Description  | Notes
 # **delete_organization**
 > delete_organization(project_id, organization_id)
 
-Delete a B2B SSO Organization for a project.
+
+
+Delete a B2B SSO Organization for a project
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -299,10 +301,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -312,7 +315,6 @@ with ory_client.ApiClient(configuration) as api_client:
     organization_id = 'organization_id_example' # str | Organization ID  The Organization's ID.
 
     try:
-        # Delete a B2B SSO Organization for a project.
         api_instance.delete_organization(project_id, organization_id)
     except Exception as e:
         print("Exception when calling ProjectApi->delete_organization: %s\n" % e)
@@ -334,7 +336,7 @@ void (empty response body)
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -363,17 +365,17 @@ Deletes an API token and immediately removes it.
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -381,10 +383,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -416,7 +419,7 @@ void (empty response body)
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -432,90 +435,14 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_active_project_in_console**
-> ActiveProjectInConsole get_active_project_in_console()
-
-Returns the Ory Network Project selected in the Ory Network Console
-
-Use this API to get your active project in the Ory Network Console UI.
-
-### Example
-
-* Bearer Authentication (oryAccessToken):
-
-```python
-import ory_client
-from ory_client.models.active_project_in_console import ActiveProjectInConsole
-from ory_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with ory_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = ory_client.ProjectApi(api_client)
-
-    try:
-        # Returns the Ory Network Project selected in the Ory Network Console
-        api_response = api_instance.get_active_project_in_console()
-        print("The response of ProjectApi->get_active_project_in_console:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ProjectApi->get_active_project_in_console: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**ActiveProjectInConsole**](ActiveProjectInConsole.md)
-
-### Authorization
-
-[oryAccessToken](../README.md#oryAccessToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | activeProjectInConsole |  -  |
-**401** | genericError |  -  |
-**0** | genericError |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_organization**
 > GetOrganizationResponse get_organization(project_id, organization_id)
 
-Returns a B2B SSO Organization for a project by it's ID.
+Returns a B2B SSO Organization for a project by its ID
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -523,10 +450,10 @@ from ory_client.models.get_organization_response import GetOrganizationResponse
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -534,10 +461,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -547,7 +475,7 @@ with ory_client.ApiClient(configuration) as api_client:
     organization_id = 'organization_id_example' # str | Organization ID  The Organization's ID.
 
     try:
-        # Returns a B2B SSO Organization for a project by it's ID.
+        # Returns a B2B SSO Organization for a project by its ID
         api_response = api_instance.get_organization(project_id, organization_id)
         print("The response of ProjectApi->get_organization:\n")
         pprint(api_response)
@@ -571,7 +499,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -598,7 +526,7 @@ Get a projects you have access to by its ID.
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -606,10 +534,10 @@ from ory_client.models.project import Project
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -617,10 +545,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -652,7 +581,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -680,7 +609,7 @@ This endpoint requires the user to be a member of the project with the role `OWN
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -688,10 +617,10 @@ from ory_client.models.project_member import ProjectMember
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -699,10 +628,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -734,7 +664,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -752,102 +682,16 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_project_metrics**
-> GetProjectMetricsResponse get_project_metrics(project_id, event_type, resolution, var_from, to)
-
-
-
-Retrieves project metrics for the specified event type and time range
-
-### Example
-
-* Bearer Authentication (oryAccessToken):
-
-```python
-import ory_client
-from ory_client.models.get_project_metrics_response import GetProjectMetricsResponse
-from ory_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with ory_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = ory_client.ProjectApi(api_client)
-    project_id = 'project_id_example' # str | Project ID
-    event_type = 'event_type_example' # str | The event type to query for
-    resolution = 'resolution_example' # str | The resolution of the buckets  The minimum resolution is 1 minute.
-    var_from = '2013-10-20T19:20:30+01:00' # datetime | The start RFC3339 date of the time window
-    to = '2013-10-20T19:20:30+01:00' # datetime | The end RFC3339 date of the time window
-
-    try:
-        api_response = api_instance.get_project_metrics(project_id, event_type, resolution, var_from, to)
-        print("The response of ProjectApi->get_project_metrics:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ProjectApi->get_project_metrics: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **project_id** | **str**| Project ID | 
- **event_type** | **str**| The event type to query for | 
- **resolution** | **str**| The resolution of the buckets  The minimum resolution is 1 minute. | 
- **var_from** | **datetime**| The start RFC3339 date of the time window | 
- **to** | **datetime**| The end RFC3339 date of the time window | 
-
-### Return type
-
-[**GetProjectMetricsResponse**](GetProjectMetricsResponse.md)
-
-### Authorization
-
-[oryAccessToken](../README.md#oryAccessToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | getProjectMetricsResponse |  -  |
-**400** | genericError |  -  |
-**403** | genericError |  -  |
-**0** | genericError |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **list_organizations**
 > ListOrganizationsResponse list_organizations(project_id)
 
 
 
+List all B2B SSO Organizations for a project
+
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -855,10 +699,10 @@ from ory_client.models.list_organizations_response import ListOrganizationsRespo
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -866,10 +710,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -900,7 +745,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -927,7 +772,7 @@ A list of all the project's API tokens.
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -935,10 +780,10 @@ from ory_client.models.project_api_key import ProjectApiKey
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -946,10 +791,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -981,7 +827,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -1006,7 +852,7 @@ Lists all projects you have access to.
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -1014,10 +860,10 @@ from ory_client.models.project_metadata import ProjectMetadata
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1025,10 +871,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -1056,7 +903,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -1084,7 +931,7 @@ Deprecated: Use the `patchProjectWithRevision` endpoint instead to specify the e
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -1093,10 +940,10 @@ from ory_client.models.successful_project_update import SuccessfulProjectUpdate
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1104,10 +951,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -1141,7 +989,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -1170,17 +1018,17 @@ Irrecoverably purge a project
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1188,10 +1036,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -1221,7 +1070,7 @@ void (empty response body)
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -1249,17 +1098,17 @@ This also sets their invite status to `REMOVED`. This endpoint requires the user
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1267,10 +1116,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -1302,7 +1152,7 @@ void (empty response body)
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -1320,84 +1170,6 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_active_project_in_console**
-> set_active_project_in_console(set_active_project_in_console_body=set_active_project_in_console_body)
-
-Sets the Ory Network Project active in the Ory Network Console
-
-Use this API to set your active project in the Ory Network Console UI.
-
-### Example
-
-* Bearer Authentication (oryAccessToken):
-
-```python
-import ory_client
-from ory_client.models.set_active_project_in_console_body import SetActiveProjectInConsoleBody
-from ory_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with ory_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = ory_client.ProjectApi(api_client)
-    set_active_project_in_console_body = ory_client.SetActiveProjectInConsoleBody() # SetActiveProjectInConsoleBody |  (optional)
-
-    try:
-        # Sets the Ory Network Project active in the Ory Network Console
-        api_instance.set_active_project_in_console(set_active_project_in_console_body=set_active_project_in_console_body)
-    except Exception as e:
-        print("Exception when calling ProjectApi->set_active_project_in_console: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **set_active_project_in_console_body** | [**SetActiveProjectInConsoleBody**](SetActiveProjectInConsoleBody.md)|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oryAccessToken](../README.md#oryAccessToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | Empty responses are sent when, for example, resources are deleted. The HTTP status code for empty responses is typically 201. |  -  |
-**401** | genericError |  -  |
-**0** | genericError |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **set_project**
 > SuccessfulProjectUpdate set_project(project_id, set_project=set_project)
 
@@ -1407,7 +1179,7 @@ This endpoints allows you to update the Ory Network project configuration for in
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -1416,10 +1188,10 @@ from ory_client.models.successful_project_update import SuccessfulProjectUpdate
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1427,10 +1199,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -1464,7 +1237,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 
@@ -1487,11 +1260,13 @@ Name | Type | Description  | Notes
 # **update_organization**
 > Organization update_organization(project_id, organization_id, organization_body=organization_body)
 
-Update a B2B SSO Organization for a project.
+
+
+Update a B2B SSO Organization for a project
 
 ### Example
 
-* Bearer Authentication (oryAccessToken):
+* Api Key Authentication (oryNetworkCookie):
 
 ```python
 import ory_client
@@ -1500,10 +1275,10 @@ from ory_client.models.organization_body import OrganizationBody
 from ory_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://playground.projects.oryapis.com
+# Defining the host is optional and defaults to https://.projects.oryapis.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_client.Configuration(
-    host = "https://playground.projects.oryapis.com"
+    host = "https://.projects.oryapis.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1511,10 +1286,11 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization: oryAccessToken
-configuration = ory_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
+# Configure API key authorization: oryNetworkCookie
+configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -1525,7 +1301,6 @@ with ory_client.ApiClient(configuration) as api_client:
     organization_body = ory_client.OrganizationBody() # OrganizationBody |  (optional)
 
     try:
-        # Update a B2B SSO Organization for a project.
         api_response = api_instance.update_organization(project_id, organization_id, organization_body=organization_body)
         print("The response of ProjectApi->update_organization:\n")
         pprint(api_response)
@@ -1550,7 +1325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryAccessToken](../README.md#oryAccessToken)
+[oryNetworkCookie](../README.md#oryNetworkCookie)
 
 ### HTTP request headers
 

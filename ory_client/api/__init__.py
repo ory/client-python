@@ -13,4 +13,5 @@ from ory_client.api.permission_api import PermissionApi
 from ory_client.api.project_api import ProjectApi
 from ory_client.api.relationship_api import RelationshipApi
 from ory_client.api.wellknown_api import WellknownApi
+from ory_client.api.workspace_api import WorkspaceApi
 

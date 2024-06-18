@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cors_admin** | [**ProjectCors**](ProjectCors.md) |  | [optional] 
 **cors_public** | [**ProjectCors**](ProjectCors.md) |  | [optional] 
+**environment** | **str** | The environment of the project. prod Production stage Staging dev Development | 
 **id** | **str** | The project&#39;s ID. | [readonly] 
 **name** | **str** | The name of the project. | 
 **revision_id** | **str** | The configuration revision ID. | [readonly] 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **hosts** | **List[str]** |  | 
 **id** | **str** | The project&#39;s ID. | [readonly] 
 **name** | **str** | The project&#39;s name if set | 
-**slug** | **str** | The project&#39;s slug | [optional] [readonly] 
+**slug** | **str** | The project&#39;s slug | [readonly] 
 **state** | **str** | The state of the project. running Running halted Halted deleted Deleted | 
 **subscription_id** | **str** |  | [optional] 
 **subscription_plan** | **str** |  | [optional] 
