@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **datetime** | The Project&#39;s Creation Date | 
 **environment** | **str** | The environment of the project. prod Production stage Staging dev Development | 
+**home_region** | **str** | The project&#39;s data home region eu-central EUCentral us-east USEast us-west USWest global Global | 
 **hosts** | **List[str]** |  | 
 **id** | **str** | The project&#39;s ID. | [readonly] 
 **name** | **str** | The project&#39;s name if set | 

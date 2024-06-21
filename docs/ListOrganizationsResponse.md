@@ -6,7 +6,9 @@ B2B SSO Organization List
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**organizations** | [**List[Organization]**](Organization.md) |  | 
+**has_next_page** | **bool** |  | 
+**next_page_token** | **str** |  | 
+**organizations** | [**List[Organization]**](Organization.md) | The list of organizations | 
 
 ## Example
 
