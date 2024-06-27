@@ -278,6 +278,7 @@ docs/Warning.md
 docs/WellknownApi.md
 docs/Workspace.md
 docs/WorkspaceApi.md
+docs/WorkspaceApiKey.md
 git_push.sh
 ory_client/__init__.py
 ory_client/api/__init__.py
@@ -560,6 +561,7 @@ ory_client/models/verification_flow_state.py
 ory_client/models/version.py
 ory_client/models/warning.py
 ory_client/models/workspace.py
+ory_client/models/workspace_api_key.py
 ory_client/py.typed
 ory_client/rest.py
 pyproject.toml
@@ -842,4 +844,5 @@ test/test_warning.py
 test/test_wellknown_api.py
 test/test_workspace.py
 test/test_workspace_api.py
+test/test_workspace_api_key.py
 tox.ini

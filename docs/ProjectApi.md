@@ -31,7 +31,7 @@ Create a B2B SSO Organization
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -51,11 +51,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -88,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -116,7 +115,7 @@ Creates a new project.
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -136,11 +135,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -172,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -200,7 +198,7 @@ Create an API token for a project.
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -220,11 +218,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -258,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -283,7 +280,7 @@ Delete a B2B SSO Organization for a project
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -301,11 +298,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -336,7 +332,7 @@ void (empty response body)
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -365,7 +361,7 @@ Deletes an API token and immediately removes it.
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -383,11 +379,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -419,7 +414,7 @@ void (empty response body)
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -442,7 +437,7 @@ Returns a B2B SSO Organization for a project by its ID
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -461,11 +456,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -499,7 +493,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -526,7 +520,7 @@ Get a projects you have access to by its ID.
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -545,11 +539,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -581,7 +574,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -609,7 +602,7 @@ This endpoint requires the user to be a member of the project with the role `OWN
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -628,11 +621,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -664,7 +656,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -691,7 +683,7 @@ List all B2B SSO Organizations for a project
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -710,11 +702,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -751,7 +742,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -778,7 +769,7 @@ A list of all the project's API tokens.
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -797,11 +788,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -833,7 +823,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -858,7 +848,7 @@ Lists all projects you have access to.
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -877,11 +867,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -909,7 +898,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -937,7 +926,7 @@ Deprecated: Use the `patchProjectWithRevision` endpoint instead to specify the e
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -957,11 +946,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -995,7 +983,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -1024,7 +1012,7 @@ Irrecoverably purge a project
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -1042,11 +1030,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -1076,7 +1063,7 @@ void (empty response body)
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -1104,7 +1091,7 @@ This also sets their invite status to `REMOVED`. This endpoint requires the user
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -1122,11 +1109,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -1158,7 +1144,7 @@ void (empty response body)
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -1185,7 +1171,7 @@ This endpoints allows you to update the Ory Network project configuration for in
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -1205,11 +1191,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -1243,7 +1228,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -1272,7 +1257,7 @@ Update a B2B SSO Organization for a project
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -1292,11 +1277,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -1331,7 +1315,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 

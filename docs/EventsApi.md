@@ -17,7 +17,7 @@ Create an event stream for your project.
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -37,11 +37,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -75,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -103,7 +102,7 @@ Remove an event stream from a project.
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -121,11 +120,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -157,7 +155,7 @@ void (empty response body)
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -183,7 +181,7 @@ List all event streams for the project. This endpoint is not paginated.
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -202,11 +200,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -238,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
@@ -263,7 +260,7 @@ Update an event stream for a project.
 
 ### Example
 
-* Api Key Authentication (oryNetworkCookie):
+* Bearer Authentication (oryWorkspaceApiKey):
 
 ```python
 import ory_client
@@ -283,11 +280,10 @@ configuration = ory_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: oryNetworkCookie
-configuration.api_key['oryNetworkCookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['oryNetworkCookie'] = 'Bearer'
+# Configure Bearer authorization: oryWorkspaceApiKey
+configuration = ory_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with ory_client.ApiClient(configuration) as api_client:
@@ -323,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oryNetworkCookie](../README.md#oryNetworkCookie)
+[oryWorkspaceApiKey](../README.md#oryWorkspaceApiKey)
 
 ### HTTP request headers
 
