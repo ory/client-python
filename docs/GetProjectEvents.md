@@ -1,4 +1,4 @@
-# GetProjectEventsResponse
+# GetProjectEvents
 
 Response of the getProjectEvents endpoint
 
@@ -12,19 +12,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ory_client.models.get_project_events_response import GetProjectEventsResponse
+from ory_client.models.get_project_events import GetProjectEvents
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of GetProjectEventsResponse from a JSON string
-get_project_events_response_instance = GetProjectEventsResponse.from_json(json)
+# create an instance of GetProjectEvents from a JSON string
+get_project_events_instance = GetProjectEvents.from_json(json)
 # print the JSON string representation of the object
-print(GetProjectEventsResponse.to_json())
+print(GetProjectEvents.to_json())
 
 # convert the object into a dict
-get_project_events_response_dict = get_project_events_response_instance.to_dict()
-# create an instance of GetProjectEventsResponse from a dict
-get_project_events_response_from_dict = GetProjectEventsResponse.from_dict(get_project_events_response_dict)
+get_project_events_dict = get_project_events_instance.to_dict()
+# create an instance of GetProjectEvents from a dict
+get_project_events_from_dict = GetProjectEvents.from_dict(get_project_events_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
