@@ -32,6 +32,8 @@ Method | HTTP request | Description
 
 Create an Enterprise SSO Organization
 
+Deprecated: use setProject or patchProjectWithRevision instead
+
 Creates an Enterprise SSO Organization in a project.
 
 ### Example
@@ -366,6 +368,8 @@ Name | Type | Description  | Notes
 
 Delete Enterprise SSO Organization
 
+Deprecated: use setProject or patchProjectWithRevision instead
+
 Irrecoverably deletes an Enterprise SSO Organization in a project by its ID.
 
 ### Example
@@ -607,6 +611,8 @@ void (empty response body)
 > GetOrganizationResponse get_organization(project_id, organization_id)
 
 Get Enterprise SSO Organization by ID
+
+Deprecated: use getProject instead
 
 Retrieves an Enterprise SSO Organization for a project by its ID
 
@@ -936,6 +942,8 @@ Name | Type | Description  | Notes
 > ListOrganizationsResponse list_organizations(project_id, page_size=page_size, page_token=page_token, domain=domain)
 
 List all Enterprise SSO organizations
+
+Deprecated: use getProject instead
 
 Lists all Enterprise SSO organizations in a project.
 
@@ -1654,6 +1662,8 @@ Name | Type | Description  | Notes
 > Organization update_organization(project_id, organization_id, organization_body=organization_body)
 
 Update an Enterprise SSO Organization
+
+Deprecated: use setProject or patchProjectWithRevision instead
 
 Updates an Enterprise SSO Organization in a project by its ID.
 
